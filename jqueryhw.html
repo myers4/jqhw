@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>jQuery Homework</title>
+      <script src="http://code.jquery.com/jquery-latest.js"></script>
+      <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+      <style>
+        h1{
+          font-family:VT323;
+          font-size:140px;
+          text-align:center;
+        }
+        nav{
+          display:none;
+        }
+        h2{
+          font-family:VT323;
+          font-size:30px;
+          text-align:center;
+        }
+        .visible{
+          display:block;
+        }
+        h6,h5{
+          font-family:Helvetica, sans-serif;
+          font-size:14px;
+          text-align:right;
+          margin-right:20px;
+          margin:5px;
+        }
+        .bgone{
+          background-image:url("images.jpg");
+          background-repeat:no-repeat;
+          background-size:1600px;
+          background-position: center;
+        }
+        .bgtwo{
+          background-image:url("406900.jpg");
+          background-repeat:no-repeat;
+          background-size:1500px;
+          background-position:center;
+          color:red;
+        }
+        .bgthree{
+          background-image:url("outerspace.jpg");
+          background-repeat:no-repeat;
+          background-size:1500px;
+          background-position:center;
+          color:white;
+        }
+        h1, nav:hover{
+          cursor:pointer;
+        }
+      </style>
+
+      <script>
+
+        $(document).ready(function(){
+
+          $("h1").click(function(){
+            console.log("Gitter goin");
+            $("nav").addClass("visible");
+        });
+
+          $("h2:first-child").click(function(){
+            console.log("add background1");
+            $("body").addClass("bgone");
+            $("body").removeClass("bgtwo bgthree");
+          });
+
+          $("h6").click(function(){
+            console.log("closer up");
+            $("nav").removeClass("visible");
+            $("body").removeClass("bgone bgtwo bgthree");
+          });
+
+          $("h2:nth-child(2)").click(function(){
+            console.log("add background2");
+            $("body").addClass("bgtwo");
+            $("body").removeClass("bgone bgthree");
+          });
+
+          $("h2:nth-child(3)").click(function(){
+            console.log("add background3");
+            $("body").addClass("bgthree");
+            $("body").removeClass("bgone bgtwo");
+          });
+
+          $("h5").click(function(){
+            console.log("keeper");
+            $("nav").removeClass("visible");
+          });
+
+      });
+      </script>
+    </head>
+    <body>
+      <h1>Make Something...</h1>
+
+      <nav>
+        <h2>Do Something Else</h2>
+        <h2>Do Something Else</h2>
+        <h2>Do Something Else</h2>
+        <h5>keep</h5>
+        <h6>close</h6>
+      </nav>
+    </body>
+  </html>
